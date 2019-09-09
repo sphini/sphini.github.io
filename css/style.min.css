@@ -59,19 +59,20 @@ body {
 .content {
   position: absolute;
   width: 1170px;
-  /* padding: 0 10px; */
   left: 50%;
   margin-left: -585px;
   top: 50%;
   transform: translateY(-50%);
   height: 100%;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }
 a {
   text-decoration: none;
+}
+.red-dot {
+  color: #e0392d;
 }
 @-webkit-keyframes loading {
   0% {
@@ -155,9 +156,6 @@ a {
   fill: #F0F4F7;
 }
 .fil4 {
-  fill: white;
-}
-.fil6 {
   fill: #F0F4F7;
   fill-rule: nonzero;
 }
@@ -226,43 +224,42 @@ a {
 .page-header__site-list a {
   text-transform: uppercase;
   color: #000000;
+  opacity: 0.8;
 }
 .page-header__site-list a:hover {
-  color: #e0392d;
+  opacity: 1;
+}
+.page-header__site-list--night a {
+  color: white;
 }
 .site-list__item--current a {
   color: #e0392d;
+  opacity: 1;
+}
+.page_header__logo {
+  opacity: 0.8;
 }
 .page_header__logo:hover {
-  opacity: 0.7;
+  opacity: 1;
+}
+.page_header__logo--night {
+  fill: white;
 }
 .main-block {
   height: 100vh;
   min-height: 700px;
   background-color: #ffffff;
-  padding-bottom: 20px;
   box-sizing: border-box;
   overflow: hidden;
   max-height: 1280px;
-}
-.main-block__container {
-  height: 100%;
-  background-color: #ffffff;
-  background-size: auto 70%;
-  background-position: center bottom ;
-  background-repeat: no-repeat;
   position: relative;
-  border-radius: 10px;
+  border-radius: 20px;
+  padding-bottom: 40px;
+  bottom: 20px;
 }
-.main-block__container-img {
+.main-block__background {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.main-block__contaainer {
-  position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -293,14 +290,21 @@ a {
   opacity: 0.7;
   z-index: 2;
 }
-.main-block__sun-night::before:hover {
+.main-block__sun-night:hover::before {
   opacity: 1;
+  cursor: pointer;
 }
-.main-block__sun-night::before:active {
-  background-color: red;
+.main-block__night-switch:checked + .main-block__sun-night::before {
+  background-position: 0 -29px;
 }
-.checkbox:checked + .main-block__sun-night::before {
-  background-color: red;
+.main-block--night,
+.main-container--night,
+.main-block__container--night {
+  background-color: #2C4860;
+}
+.main-block__background--night {
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
 }
 
 /*# sourceMappingURL=style.min.css.map */
